@@ -59,8 +59,8 @@ const dependencies = [
   }
 
   const ohNoes = ({ titleMsg, statusMsg, imageSrc }) => {
-    title.innerHTML = titleMsg;
-    status.innerHTML = statusMsg;
+    title.textContent = titleMsg;
+    status.textContent = statusMsg;
     image.src = imageSrc;
     progress.style.display = "none";
   };
@@ -74,7 +74,7 @@ const dependencies = [
     return;
   }
 
-  status.innerHTML = "Calculating...";
+  status.textContent = "Calculating...";
 
   for (const { value, name, msg } of dependencies) {
     if (!value) {
@@ -101,7 +101,7 @@ const dependencies = [
     return;
   }
 
-  status.innerHTML = `Calculating...<br/>Difficulty: ${rules.report_as}, `;
+  status.textContent = `Calculating...<br/>Difficulty: ${rules.report_as}, `;
   progress.style.display = "inline-block";
 
   // the whole text, including "Speed:", as a single node, because some browsers
@@ -152,8 +152,8 @@ const dependencies = [
     const t1 = Date.now();
     console.log({ hash, nonce });
 
-    title.innerHTML = "Success!";
-    status.innerHTML = `Done! Took ${t1 - t0}ms, ${nonce} iterations`;
+    title.textContent = "Success!";
+    status.textContent = `Done! Took ${t1 - t0}ms, ${nonce} iterations`;
     image.src = imageURL("happy", anubisVersion, basePrefix);
     progress.style.display = "none";
 
@@ -174,7 +174,7 @@ const dependencies = [
       container.style.outlineOffset = "2px";
       container.style.width = "min(20rem, 90%)";
       container.style.margin = "1rem auto 2rem";
-      container.innerHTML = "I've finished reading, continue →";
+      container.textContent = "I've finished reading, continue →";
 
       function onDetailsExpand() {
         const redir = window.location.href;
