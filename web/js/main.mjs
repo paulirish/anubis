@@ -101,7 +101,7 @@ const dependencies = [
     return;
   }
 
-  status.textContent = `Calculating...<br/>Difficulty: ${rules.report_as}, `;
+  status.innerHTML = `Calculating...<br/>Difficulty: ${rules.report_as}, `;
   progress.style.display = "inline-block";
 
   // the whole text, including "Speed:", as a single node, because some browsers
